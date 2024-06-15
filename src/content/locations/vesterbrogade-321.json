@@ -1,0 +1,9 @@
+{
+  "title": "Vesterbrogade 321",
+  "mainImage": "./location-2-images/location-2-main-image.jpg",
+  "address": {
+    "streetName": "Vesterbrogade 321",
+    "postalCode": 1620,
+    "city": "København V"
+  }
+}

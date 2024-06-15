@@ -1,0 +1,9 @@
+{
+  "title": "Østerbrogade 123",
+  "mainImage": "./location-1-images/location-1-main-image.jpg",
+  "address": {
+    "streetName": "Østerbrogade 123",
+    "postalCode": 2100,
+    "city": "København Ø"
+  }
+}

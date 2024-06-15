@@ -1,5 +1,6 @@
 ---
 import "@fontsource-variable/montserrat";
+import { ViewTransitions } from "astro:transitions";
 import Header from "../components/Header.astro";
 
 const { pageTitle } = Astro.props;
@@ -12,6 +13,7 @@ const { pageTitle } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle ? `${pageTitle} | Jacoblund` : `Jacoblund`}</title>
+    <ViewTransitions />
   </head>
   <body class="bg-zinc-300">
     <Header />

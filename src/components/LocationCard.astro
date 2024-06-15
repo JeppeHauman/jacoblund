@@ -1,0 +1,36 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+import { slide } from "astro:transitions";
+
+type Props = {
+  location: CollectionEntry<"locations">;
+};
+const { location } = Astro.props;
+---
+
+<div class="max-w-lg group">
+  <h3
+    class="text-center text-2xl md:text-3xl mb-2 lg:mb-0 lg:translate-y-full lg:group-hover:-translate-y-2 transition-all"
+  >
+    {location.data.title}
+  </h3>
+  <div
+    class="relative overflow-hidden group lg:group-hover:rounded-lg transition-all"
+  >
+    <Image
+      class="overlay lg:group-hover:scale-105 transition-all aspect-[16/10] object-cover"
+      src={location.data.mainImage}
+      alt={"a building in Copenhagen"}
+    />
+    <div
+      class="absolute w-full h-full transition-all bg-[rgba(0,0,0,0.4)] lg:bg-[rgba(0,0,0,0)] lg:group-hover:bg-[rgba(0,0,0,0.6)] top-0 left-0 flex justify-center items-center"
+    >
+      <a
+        href={`/location/${location.id}`}
+        class="text-white text-lg border rounded-md px-2 py-1 lg:opacity-0 group-hover:opacity-100 transition-all duration-500"
+        >Se mere</a
+      >
+    </div>
+  </div>
+</div>
