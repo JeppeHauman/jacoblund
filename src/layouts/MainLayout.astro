@@ -2,6 +2,7 @@
 import "@fontsource-variable/montserrat";
 import { ViewTransitions } from "astro:transitions";
 import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 
 const { pageTitle } = Astro.props;
 ---
@@ -15,8 +16,11 @@ const { pageTitle } = Astro.props;
     <title>{pageTitle ? `${pageTitle} | Jacoblund` : `Jacoblund`}</title>
     <ViewTransitions />
   </head>
-  <body class="bg-zinc-300">
+  <body class="bg-zinc-300 flex flex-col min-h-screen">
     <Header />
-    <slot />
+    <main class="grow">
+      <slot />
+    </main>
+    <Footer />
   </body>
 </html>

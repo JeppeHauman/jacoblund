@@ -2,7 +2,6 @@
 import { getCollection } from "astro:content";
 import MainLayout from "../../layouts/MainLayout.astro";
 import { Image } from "astro:assets";
-import { slide } from "astro:transitions";
 
 export async function getStaticPaths() {
   const locations = await getCollection("locations");
@@ -17,35 +16,31 @@ export async function getStaticPaths() {
 }
 
 const { location } = Astro.props;
-const { title, address, mainImage, available } = location.data;
+const { title, address, mainImage, available, description } = location.data;
 ---
 
 <MainLayout>
   <div class="container mx-auto">
-    <h1 class="text-center text-3xl mt-10 mb-5">{title}</h1>
+    <h1 class="text-center text-2xl sm:text-3xl mt-10 mb-5">{title}</h1>
     <h3 class="text-center text-xl mb-10">
       {address.postalCode}, {address.city}
     </h3>
     <div class="max-w-2xl mx-auto">
+      <p class="mb-10 text-center lg:text-lg px-2 md:px-0">
+        {description && description}
+      </p>
       <div class="relative">
         <Image class="" src={mainImage} alt={"a building in Copenhagen"} />
         {
           !available && (
             <div class="absolute top-0 left-0 h-full w-full bg-[rgba(0,0,0,0.8)] flex items-center justify-center">
-              <p class="text-center text-white font-semibold text-2xl">
+              <p class="text-center text-white font-semibold text-2xl border-white border-2 px-4 py-2">
                 Udlejet
               </p>
             </div>
           )
         }
       </div>
-      <p>
-        {
-          available
-            ? "Lejemålet er ledigt, kontakt for mere inforrmation"
-            : "Lejemålet er ikke ledigt"
-        }
-      </p>
     </div>
   </div>
 </MainLayout>
