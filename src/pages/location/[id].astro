@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import ImageGallery from "../../components/ImageGallery.svelte";
 import MainLayout from "../../layouts/MainLayout.astro";
 import { Image } from "astro:assets";
 
@@ -16,7 +17,8 @@ export async function getStaticPaths() {
 }
 
 const { location } = Astro.props;
-const { title, address, mainImage, available, description } = location.data;
+const { title, address, mainImage, available, description, images } =
+  location.data;
 ---
 
 <MainLayout>
@@ -41,6 +43,8 @@ const { title, address, mainImage, available, description } = location.data;
           )
         }
       </div>
+      {images && <ImageGallery client:visible images={images} />}
+      <!-- {available && <a href={`/location/${location.id}/images`} />} -->
     </div>
   </div>
 </MainLayout>

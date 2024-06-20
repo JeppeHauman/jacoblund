@@ -1,0 +1,29 @@
+---
+import { getCollection } from "astro:content";
+import MainLayout from "../../../layouts/MainLayout.astro";
+import { Image } from "astro:assets";
+
+export async function getStaticPaths() {
+  const locations = await getCollection("locations");
+  return locations.map((location) => ({
+    params: {
+      id: location.id,
+    },
+    props: {
+      location,
+    },
+  }));
+}
+
+const { location } = Astro.props;
+
+const { images } = location.data || undefined;
+---
+
+<MainLayout>
+  <h1>images</h1>
+
+  <div class="grid gap-10 max-w-5xl mx-auto">
+    {images && images.map((image) => <Image src={image} alt={"something"} />)}
+  </div>
+</MainLayout>

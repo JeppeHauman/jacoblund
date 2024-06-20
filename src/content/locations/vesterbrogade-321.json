@@ -1,6 +1,11 @@
 {
   "title": "Vesterbrogade 321",
-  "mainImage": "./location-2-images/location-2-main-image.jpg",
+  "mainImage": "./vesterbrogade-321-images/vesterbrogade-321-main-image.jpg",
+  "images": [
+    "./vesterbrogade-321-images/vesterbrogade-321-main-image.jpg",
+    "./vesterbrogade-321-images/vesterbrogade-321-main-image.jpg",
+    "./vesterbrogade-321-images/vesterbrogade-321-main-image.jpg"
+  ],
   "address": {
     "streetName": "Vesterbrogade 321",
     "postalCode": 1620,

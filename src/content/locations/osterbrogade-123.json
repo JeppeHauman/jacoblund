@@ -1,10 +1,11 @@
 {
   "title": "Østerbrogade 123",
-  "mainImage": "./location-1-images/location-1-main-image.jpg",
+  "mainImage": "./osterbrogade-123-images/osterbrogade-123-main-image.jpg",
   "address": {
     "streetName": "Østerbrogade 123",
     "postalCode": 2100,
     "city": "København Ø"
   },
-  "description": "Lejemål på Østerbro: 80 m² erhvervslokale i gadeplan, ideelt til restaurant eller take-away. Lokalet er i øjeblikket indrettet som spisested med køkkenfaciliteter og serveringsområde. Beliggende i et attraktivt område med god synlighed og høj kundetrafik. Perfekt til gastronomiske koncepter og takeaway-forretninger."
+  "description": "Lejemål på Østerbro: 80 m² erhvervslokale i gadeplan, ideelt til restaurant eller take-away. Lokalet er i øjeblikket indrettet som spisested med køkkenfaciliteter og serveringsområde. Beliggende i et attraktivt område med god synlighed og høj kundetrafik. Perfekt til gastronomiske koncepter og takeaway-forretninger.",
+  "available": true
 }
