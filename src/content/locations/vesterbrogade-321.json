@@ -3,13 +3,13 @@
   "mainImage": "./vesterbrogade-321-images/vesterbrogade-321-main-image.jpg",
   "images": [
     "./vesterbrogade-321-images/vesterbrogade-321-main-image.jpg",
-    "./vesterbrogade-321-images/vesterbrogade-321-main-image.jpg",
-    "./vesterbrogade-321-images/vesterbrogade-321-main-image.jpg"
+    "./osterbrogade-123-images/osterbrogade-123-main-image.jpg"
   ],
   "address": {
     "streetName": "Vesterbrogade 321",
     "postalCode": 1620,
     "city": "København V"
   },
-  "description": "Lejemål på Vesterbro: 80 m² kælderlokale, ideelt til erhvervsbrug. Lokalet er i øjeblikket indrettet som frisørsalon og tilbyder en lys og rummelig atmosfære med moderne faciliteter. Perfekt beliggenhed i et livligt område med god kundetrafik."
+  "description": "Lejemål på Vesterbro: 80 m² kælderlokale, ideelt til erhvervsbrug. Lokalet er i øjeblikket indrettet som frisørsalon og tilbyder en lys og rummelig atmosfære med moderne faciliteter. Perfekt beliggenhed i et livligt område med god kundetrafik.",
+  "available": true
 }
