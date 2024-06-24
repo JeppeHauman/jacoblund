@@ -22,10 +22,12 @@
   };
 </script>
 
-<div class={`lg:h-[500px] flex items-center justify-center relative`}>
+<div class={`sm:h-[500px] flex items-center justify-center relative`}>
+  <!-- Next Image Button -->
   <button
     on:click={nextImage}
-    class="absolute right-0 top-1/2 -translate-y-1/2 lg:translate-x-full h-12 w-12 text-zinc-800"
+    class="absolute right-2 lg:-right-2 top-1/2 -translate-y-1/2 lg:translate-x-full w-10 h-10 sm:h-12 sm:w-12 hover:text-zinc-200 lg:hover:text-zinc-800 text-zinc-400 lg:text-zinc-800 rounded-full bg-black
+     lg:bg-black lg:bg-opacity-10 bg-opacity-50 lg:hover:bg-opacity-20"
     ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
       ><path
         height="1em"
@@ -35,9 +37,11 @@
       /></svg
     ></button
   >
+  <!-- Previous Image Button -->
   <button
     on:click={prevImage}
-    class="absolute left-0 top-1/2 -translate-y-1/2 lg:-translate-x-full h-12 w-12 text-zinc-800"
+    class="absolute left-2 lg:-left-2 top-1/2 -translate-y-1/2 lg:-translate-x-full w-10 h-10 sm:h-12 sm:w-12 hover:text-zinc-200 lg:hover:text-zinc-800 text-zinc-400 lg:text-zinc-800 rounded-full bg-black
+    lg:bg-black lg:bg-opacity-10 bg-opacity-50 lg:hover:bg-opacity-20"
     ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
       ><path
         width="1em"
@@ -47,9 +51,9 @@
       /></svg
     ></button
   >
-  <img src={images[activeIndex].src} alt="alt" />
+  <img class="object-contain h-full" src={images[activeIndex].src} alt="alt" />
 </div>
-<div class="grid grid-cols-5 gap-4 mt-4">
+<div class="grid grid-cols-5 sm:gap-4 mt-4">
   {#each images as image, i}
     <button
       on:click={() => (activeIndex = i)}
