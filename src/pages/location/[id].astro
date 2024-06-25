@@ -23,7 +23,9 @@ const { title, address, mainImage, available, description, images } =
 
 <MainLayout>
   <div class="container mx-auto">
-    <h1 class="text-center text-2xl sm:text-3xl mt-10 mb-5">{title}</h1>
+    <h1 class="text-center text-2xl sm:text-3xl mt-10 mb-5">
+      {address.streetName}
+    </h1>
     <h3 class="text-center text-xl mb-10">
       {address.postalCode}, {address.city}
     </h3>
