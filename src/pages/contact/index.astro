@@ -4,13 +4,13 @@ import MainLayout from "../../layouts/MainLayout.astro";
 ---
 
 <MainLayout>
-  <h1 class="text-center text-2xl md:text-3xl lg:text-7xl font-semibold mt-10">
+  <h1 class="text-center text-4xl md:text-5xl lg:text-7xl font-semibold mt-10">
     Kontakt
   </h1>
 
   <div class="py-20 grid gap-10">
     <div>
-      <h3 class="text-center text-3xl mb-8">Christian</h3>
+      <h3 class="text-center text-3xl mb-8 font-semibold">Christian</h3>
       <ul class="text-center space-y-5">
         <li>
           <a class="flex flex-col justify-center items-center w-fit mx-auto mb-2" href="mailto:christian.aerenlund@gmail.com"
@@ -29,13 +29,23 @@ import MainLayout from "../../layouts/MainLayout.astro";
       </ul>
     </div>
     <div>
-      <h3 class="text-center text-3xl mb-8">Mona</h3>
+      <h3 class="text-center text-3xl mb-8 font-semibold">Mona</h3>
       <ul class="text-center space-y-5">
         <li>
-          <a class="" href="mailto:monakorf@hotmail.com">monakorf@hotmail.com</a
+          <a class="flex flex-col justify-center items-center w-fit mx-auto mb-2" href="mailto:monakorf@hotmail.com"
           >
+          <Icon class="text-4xl" name={"email"}/>
+          </a
+          >
+          <span>monakorf@hotmail.com</span>
         </li>
-        <li><a class="" href="tel:+4530310015">+45 30 31 00 15</a></li>
+        <li>
+          <a class="flex flex-col justify-center items-center w-fit mx-auto mb-2" href="tel:+4530310015">
+            <Icon class="text-4xl" name="phone" />
+          </a>
+          <span>+45 30 31 00 15</span>
+        </li>
+        
       </ul>
     </div>
   </div>
