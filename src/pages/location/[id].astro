@@ -52,7 +52,9 @@ const { title, address, mainImage, available, description, images } =
        <div class="md:hidden">
           <div class="whitespace-nowrap overflow-auto h-96 p-4 snap-x snap-mandatory">
             {images?.map((image) => (
-              <Image class="inline-block h-full object-contain snap-center snap-mandatory snap-x" src={image} alt={"testing"}/>
+              <div class="w-screen inline-block h-full">
+                <Image class="inline-block h-full object-contain snap-center snap-mandatory snap-x" src={image} alt={"testing"}/>
+              </div>
             ))}
           </div>
        </div>
