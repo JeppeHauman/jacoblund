@@ -1,4 +1,5 @@
 ---
+import { Icon } from "astro-icon/components";
 import MainLayout from "../../layouts/MainLayout.astro";
 ---
 
@@ -12,11 +13,19 @@ import MainLayout from "../../layouts/MainLayout.astro";
       <h3 class="text-center text-3xl mb-8">Christian</h3>
       <ul class="text-center space-y-5">
         <li>
-          <a class="" href="mailto:christian.aerenlund@gmail.com"
-            >christian.aerenlund@gmail.com</a
+          <a class="flex flex-col justify-center items-center w-fit mx-auto mb-2" href="mailto:christian.aerenlund@gmail.com"
           >
+          <Icon class="text-4xl" name={"email"}/>
+          </a
+          >
+          <span>christian.aerenlund@gmail.com</span>
         </li>
-        <li><a class="" href="tel:+4551949133">+45 51 94 91 33</a></li>
+        <li>
+          <a class="flex flex-col justify-center items-center w-fit mx-auto mb-2" href="tel:+4551949133">
+            <Icon class="text-4xl" name="phone" />
+          </a>
+          <span>+45 51 94 91 33</span>
+        </li>
       </ul>
     </div>
     <div>
