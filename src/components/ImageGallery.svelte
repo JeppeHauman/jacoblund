@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { ImageMetadata } from "astro";
+  import FullscreenGallery from "./FullscreenGallery.svelte";
   export let images: ImageMetadata[] = [];
 
   let activeIndex = 0;
@@ -20,6 +21,8 @@
     activeIndex -= 1;
     return;
   };
+
+  let isFullscreenGalleryOpen = false;
 </script>
 
 <div class={`sm:h-[500px] flex items-center justify-center relative`}>
@@ -51,13 +54,27 @@
       /></svg
     ></button
   >
-  <img class="object-contain h-full" src={images[activeIndex].src} alt="alt" />
+  <button
+    on:click={() => {
+      isFullscreenGalleryOpen = true;
+      document.body.classList.add("modal-open");
+    }}
+    ><img
+      class="object-contain h-full"
+      src={images[activeIndex].src}
+      alt="alt"
+    /></button
+  >
 </div>
 <div class="grid grid-cols-5 sm:gap-4 mt-4">
   {#each images as image, i}
     <button
       on:click={() => (activeIndex = i)}
-      class={`${activeIndex === i ? "border border-black" : "border border-opacity-0 border-black"} transition-all relative group`}
+      class={`${
+        activeIndex === i
+          ? "border border-black"
+          : "border border-opacity-0 border-black"
+      } transition-all relative group`}
     >
       <img src={image.src} alt="doesn mattah" />
       <div
@@ -66,3 +83,6 @@
     </button>
   {/each}
 </div>
+<!-- Fullscreen image gallery -->
+
+<FullscreenGallery bind:isOpen={isFullscreenGalleryOpen} {images} />

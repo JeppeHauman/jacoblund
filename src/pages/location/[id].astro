@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import ImageGallery from "../../components/ImageGallery.svelte";
+import FullscreenGallery from "../../components/FullscreenGallery.svelte"
 import MainLayout from "../../layouts/MainLayout.astro";
 import { Image } from "astro:assets";
 
@@ -49,6 +50,7 @@ const { title, address, mainImage, available, description, images } =
       }
       <div class="hidden md:block">
         {images && available && <ImageGallery client:visible images={images} />}
+        
       </div>
       <!-- {available && <a href={`/location/${location.id}/images`} />} -->
       <div class="md:hidden">
