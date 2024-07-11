@@ -55,6 +55,7 @@
     ></button
   >
   <button
+    class="hover:cursor-zoom-in"
     on:click={() => {
       isFullscreenGalleryOpen = true;
       document.body.classList.add("modal-open");

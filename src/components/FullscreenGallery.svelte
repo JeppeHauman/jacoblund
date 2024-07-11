@@ -5,6 +5,11 @@
   export let images: ImageMetadata[] = [];
   let activeIndex = 0;
 
+  const closeFullscreen = () => {
+    isOpen = false;
+    document.body.classList.remove("modal-open");
+  };
+
   const nextImage = () => {
     if (activeIndex === images.length - 1) {
       activeIndex = 0;
@@ -23,6 +28,26 @@
   };
 </script>
 
+<svelte:window
+  on:keydown={(e) => {
+    if (isOpen) {
+      switch (e.key) {
+        case "Escape":
+          e.preventDefault();
+          closeFullscreen();
+          break;
+        case "ArrowRight":
+          e.preventDefault();
+          nextImage();
+          break;
+        case "ArrowLeft":
+          e.preventDefault();
+          prevImage();
+          break;
+      }
+    }
+  }}
+/>
 <div
   class={`${
     isOpen ? "block" : "hidden"
@@ -68,10 +93,7 @@
     {/if}
   </div>
   <button
-    on:click={() => {
-      isOpen = false;
-      document.body.classList.remove("modal-open");
-    }}
+    on:click={() => closeFullscreen()}
     class="absolute top-5 right-5 text-5xl text-black">X</button
   >
 </div>
