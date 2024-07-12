@@ -53,9 +53,10 @@ const { title, address, mainImage, available, description, images } =
         
       </div>
       <!-- {available && <a href={`/location/${location.id}/images`} />} -->
+       <!-- mobile gallery -->
       <div class="md:hidden">
         <div
-          class="whitespace-nowrap overflow-auto min-h-fit snap-x snap-mandatory snap-center"
+          class="whitespace-nowrap overflow-auto min-h-fit snap-x snap-mandatory snap-center py-4"
         >
           {
             images?.map((image) => (
