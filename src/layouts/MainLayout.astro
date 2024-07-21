@@ -4,7 +4,12 @@ import { ViewTransitions } from "astro:transitions";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
+interface Props {
+  pageTitle?: string;
+}
+
 const { pageTitle } = Astro.props;
+const isDev = import.meta.env.DEV;
 ---
 
 <html lang="en">
@@ -13,7 +18,9 @@ const { pageTitle } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle ? `${pageTitle} | Jacoblund` : `Jacoblund`}</title>
+    <title>
+      {pageTitle ? `${pageTitle} | Jacoblund` : `Jacoblund`}{isDev && " Dev"}
+    </title>
     <ViewTransitions />
   </head>
   <body class="bg-zinc-300 flex flex-col min-h-screen">
@@ -22,13 +29,11 @@ const { pageTitle } = Astro.props;
       <slot />
     </main>
     <Footer />
+    <style>
+      body.modal-open {
+        height: 100vh;
+        overflow-y: hidden;
+      }
+    </style>
   </body>
 </html>
-
-
-<style>
-  body.modal-open {
-    height: 100vh;
-    overflow-y: hidden;
-  }
-</style>
